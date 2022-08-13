@@ -15,6 +15,13 @@ module Organizations
     self.make_api_call("/organizations/#{org_id}/licenseState", 'GET')
   end
 
+  # Returns the current devices for an organization
+  # @param [String] org_id dashboard organization ID
+  # @return [Array] an array of hashes containg information on each individual device
+  def get_devices(org_id)
+    self.make_api_call("/organizations/#{org_id}/devices", 'GET')
+  end
+
   # Returns the current inventory for an organization
   # @param [String] org_id dashboard organization ID
   # @return [Array] an array of hashes containg information on each individual device

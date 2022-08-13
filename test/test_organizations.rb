@@ -22,6 +22,11 @@ class OrganizationsTest < Minitest::Test
     assert_kind_of Hash, res
   end
 
+  def test_get_devices_for_an_org
+    res = @dapi.get_devices(@org_id)
+    assert_kind_of Array, res
+  end
+
   def test_get_inventory_for_an_org
     res = @dapi.get_inventory(@org_id)
     assert_kind_of Array, res
